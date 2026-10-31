@@ -1,27 +1,27 @@
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
-import { Products } from "@/components/sections/Products";
-import { Services } from "@/components/sections/Services";
-import { HowWeWork } from "@/components/sections/HowWeWork";
-import { Pricing } from "@/components/sections/Pricing";
+import { ProductsSection } from "@/components/sections/ProductsSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { PricingSection } from "@/components/sections/PricingSection";
+import { Founder } from "@/components/sections/Founder";
 import { Why } from "@/components/sections/Why";
 import { Faq } from "@/components/sections/Faq";
-import { About } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
+import { BookDemo } from "@/components/sections/BookDemo";
 
 export default function HomePage() {
   return (
     <main data-testid="home-page">
       <Hero />
       <Marquee />
-      <Products />
-      <Services />
-      <HowWeWork />
-      <Pricing />
+      <ProductsSection />
+      <ServicesSection />
+      <HowItWorks />
+      <PricingSection />
+      <Founder />
       <Why />
       <Faq />
-      <About />
-      <Contact />
+      <BookDemo />
     </main>
   );
 }
