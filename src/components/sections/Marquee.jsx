@@ -1,6 +1,6 @@
 const ITEMS = [
-  ["Jewellery ERP", false], ["Builder sales platform", true], ["Reels shot at your shop", false],
-  ["GST · HUID · MahaRERA", true], ["Works offline", false], ["One local team", true], ["Kamothe, Navi Mumbai", false],
+  ["Scan · Bill · WhatsApp", false], ["saving schemes", true], ["GST · HUID · Old gold", false],
+  ["works offline", true], ["मराठी · हिंदी · English", false], ["reels shot at your shop", true], ["Panvel, Navi Mumbai", false],
 ];
 
 const Row = ({ hidden }) => (

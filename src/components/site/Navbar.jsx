@@ -90,8 +90,7 @@ export const Navbar = () => {
                   <span className="font-mono text-xs text-ink-3">0{i + 1}</span>
                 </motion.button>
               ))}
-              <Link to="/jewellery-erp" onClick={() => setOpen(false)} data-testid="nav-mobile-erp" className="rounded-xl px-3 py-2 text-sm font-semibold text-gold-deep">Jewellery ERP page →</Link>
-              <Link to="/estate" onClick={() => setOpen(false)} data-testid="nav-mobile-estate" className="rounded-xl px-3 py-2 text-sm font-semibold text-gold-deep">Estate platform page →</Link>
+              <Link to="/jewellery" onClick={() => setOpen(false)} data-testid="nav-mobile-jewellery" className="rounded-xl px-3 py-2 text-sm font-semibold text-gold-deep">CaratCloud Jewellery app →</Link>
             </div>
           </motion.nav>
         )}
