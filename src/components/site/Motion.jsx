@@ -37,11 +37,11 @@ export const Eyebrow = ({ children, className = "" }) => (
   </span>
 );
 
-export const SectionHead = ({ eyebrow, title, accent, sub, align = "left", testid }) => (
+// eyebrow is accepted but no longer shown (the small pill labels were removed from the site)
+export const SectionHead = ({ title, accent, sub, align = "left", testid }) => (
   <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`} data-testid={testid}>
-    <Reveal><Eyebrow>{eyebrow}</Eyebrow></Reveal>
-    <Reveal delay={0.08}>
-      <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy leading-[1.05]">
+    <Reveal>
+      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy leading-[1.05]">
         {title} {accent && <em className="font-serif-i font-normal text-gold-deep">{accent}</em>}
       </h2>
     </Reveal>

@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 import { SectionHead, Reveal } from "../site/Motion";
 import { DemoButton } from "../site/Buttons";
-import { FAQS } from "@/data/content";
+import { FAQS } from "@/data/caratcloud";
 
 export const Faq = () => (
   <section id="faq" className="relative border-y border-line bg-cream" data-testid="faq-section">
