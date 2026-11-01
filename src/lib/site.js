@@ -15,7 +15,8 @@ export const MSG = {
   social: (name) => `Hi CaratCloud, I have an enquiry about the ${name} social media package for my jewellery shop.`,
   combo: "Hi CaratCloud, I have an enquiry about the social media + software combo for my jewellery shop.",
   referral: "Hi CaratCloud, I want to refer a jewellery shop to you.",
-  restaurant: "Hi CaratCloud, I run a restaurant / hotel / café. Please tell me when your software launches.",
+  restaurant: "Hi CaratCloud, I run a restaurant / hotel / café. Please add me to the early-access list for CaratCloud Dine.",
+  custom: "Hi CaratCloud, I want custom software made for my business.",
   general: "Hi CaratCloud, I have an enquiry.",
 };
 

@@ -25,10 +25,10 @@ export const Footer = () => (
         <div>
           <LogoFull className="h-20 w-auto" />
           <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-ink-2">
-            Simple software for small Indian businesses, in their own language. Jewellery shops first, restaurants, hotels and cafés next.
+            A software company from Navi Mumbai. Simple software for small Indian businesses, in their own language: jewellery shops today, restaurants from January 2027.
           </p>
           <div className="mt-6 flex gap-2">
-            {SOCIALS.map((s) => {
+            {SOCIALS.filter((s) => s.href !== "#").map((s) => {
               const I = ICONS[s.key];
               return (
                 <a key={s.key} href={s.href} aria-label={s.label} data-testid={`footer-social-${s.key}`} className="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-navy transition-colors hover:bg-navy hover:text-[#F4E3B0]">
@@ -40,12 +40,13 @@ export const Footer = () => (
         </div>
         <Col title="Products">
           <li><Link to="/jewellery" data-testid="footer-link-jewellery" className="hover:text-navy">CaratCloud Jewellery</Link></li>
-          <li><a href={wa(MSG.restaurant)} target="_blank" rel="noopener noreferrer" className="hover:text-navy">CaratCloud Dine <span className="ml-1 rounded-full bg-navy px-2 py-0.5 font-mono text-[9px] uppercase tracking-wider text-[#F4E3B0]">Soon</span></a></li>
+          <li><Link to="/restaurant-software" data-testid="footer-link-dine" className="hover:text-navy">CaratCloud Dine <span className="ml-1 rounded-full bg-navy px-2 py-0.5 font-mono text-[9px] uppercase tracking-wider text-[#F4E3B0]">Jan 2027</span></Link></li>
         </Col>
         <Col title="Services">
           <Btn hash="pricing">Software plans</Btn>
           <Btn hash="pricing">Social media for jewellers</Btn>
           <Btn hash="pricing">Social + software combo</Btn>
+          <li><Link to="/custom-software" data-testid="footer-link-custom" className="hover:text-navy">Custom software</Link></li>
         </Col>
         <Col title="Company">
           <Btn hash="founder">Meet the founder</Btn>

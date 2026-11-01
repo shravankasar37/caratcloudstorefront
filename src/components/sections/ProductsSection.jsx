@@ -40,21 +40,26 @@ const Soon = ({ p }) => (
     <div className="relative flex items-center gap-3">
       <span className="icon-chip !bg-[#F4E3B0] !text-navy"><p.icon className="h-5 w-5" /></span>
       <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F4E3B0]/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#F4E3B0]">
-        <Sparkles className="h-3 w-3" />Coming soon
+        <Sparkles className="h-3 w-3" />{p.when}
       </span>
     </div>
     <p className="relative mt-6 font-mono text-xs uppercase tracking-[0.2em] text-[#F4E3B0]/80">{p.tag}</p>
     <h3 className="relative mt-2 font-display text-3xl sm:text-4xl font-extrabold tracking-tight">{p.name} <em className="font-serif-i font-normal text-[#F4E3B0]">{p.accent}</em></h3>
     <p className="relative mt-4 text-[15px] leading-relaxed text-[#D5DBE6]">{p.text}</p>
-    <a href={wa(MSG.restaurant)} target="_blank" rel="noopener noreferrer" className="btn-gold relative mt-auto self-start !mt-8" data-testid="product-dine-waitlist">
-      <WhatsAppIcon className="h-[18px] w-[18px]" /> Get early access
-    </a>
+    <div className="relative mt-auto flex flex-wrap items-center gap-4 !mt-8">
+      <a href={wa(MSG.restaurant)} target="_blank" rel="noopener noreferrer" className="btn-gold" data-testid="product-dine-waitlist">
+        <WhatsAppIcon className="h-[18px] w-[18px]" /> Get early access
+      </a>
+      <Link to={p.to} className="inline-flex items-center gap-1.5 font-semibold text-[#F4E3B0] hover:text-white" data-testid="product-dine-more">
+        Restaurant software <ArrowUpRight className="h-4 w-4" />
+      </Link>
+    </div>
   </div>
 );
 
 export const ProductsSection = () => (
   <section id="products" className="section" data-testid="products-section">
-    <SectionHead eyebrow="Our products" title="Software for the shops" accent="that run India." sub="We build one product at a time, for one kind of business, and make it simple enough for the counter. Jewellery shops are first. Restaurants, hotels and cafés are next." />
+    <SectionHead eyebrow="Our products" title="Software for the shops" accent="that run India." sub="CaratCloud is a software company from Navi Mumbai. We build one product at a time, for one kind of business, and make it simple enough for the counter. Jewellery shops are live today. Restaurants, hotels and cafés launch in January 2027." />
     <div className="mt-12 grid gap-5 lg:grid-cols-[1.75fr_1fr]">
       <Reveal className="h-full"><Live p={PRODUCTS[0]} /></Reveal>
       <Reveal delay={0.1} className="h-full"><Soon p={PRODUCTS[1]} /></Reveal>

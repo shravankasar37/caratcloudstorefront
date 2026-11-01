@@ -15,8 +15,8 @@ const Cta = ({ s }) => {
 export const ServicesSection = () => (
   <section id="services" className="relative border-y border-line bg-cream" data-testid="services-section">
     <div className="section">
-      <SectionHead eyebrow="What we do" title="Run the shop on software." accent="Grow it with content." sub="One local team for both: the app your counter uses every day, and the reels that bring new customers to it." />
-      <div className="mt-12 grid gap-5 md:grid-cols-2">
+      <SectionHead eyebrow="What we do" title="Run the shop on software." accent="Grow it with content." sub="One local team for all of it: the app your counter uses every day, the reels that bring new customers, and custom software when you need something of your own." />
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
         {SERVICES.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08} className="h-full">
             <div className="card card-hover group flex h-full flex-col p-7" data-testid={`service-card-${i}`}>

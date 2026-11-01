@@ -2,7 +2,7 @@
 import {
   ScanLine, Coins, Send, PiggyBank, ClipboardCheck, Wallet, WifiOff, Languages, Tags, Users, FileSpreadsheet,
   Landmark, PackageCheck, Scale, ShieldCheck, Printer, Presentation, Store, GraduationCap, LifeBuoy,
-  Camera, Clapperboard, CalendarHeart, Gem, UtensilsCrossed,
+  Camera, Clapperboard, CalendarHeart, Gem, UtensilsCrossed, Code2, Receipt, ChefHat, Smartphone, Globe, MessagesSquare,
 } from "lucide-react";
 
 export const PRODUCTS = [
@@ -14,9 +14,9 @@ export const PRODUCTS = [
     img: "img/app/dashboard_en.webp",
   },
   {
-    key: "dine", status: "soon", icon: UtensilsCrossed,
+    key: "dine", status: "soon", when: "Launching January 2027", icon: UtensilsCrossed, to: "/restaurant-software",
     tag: "For restaurants, hotels & cafés", name: "CaratCloud", accent: "Dine",
-    text: "Our next product, for food businesses. We are working on it now. Join the early-access list and we will tell you first when it is ready.",
+    text: "Restaurant billing software for food businesses, launching in January 2027. Join the early-access list and we will set you up first.",
   },
 ];
 
@@ -67,6 +67,7 @@ export const COMBO = { a: "Social Basic", ap: 3499, b: "Standard software", bp: 
 export const SERVICES = [
   { icon: Gem, title: "Jewellery shop software", text: "CaratCloud Jewellery: billing, stock, schemes, dues and girvi in one app.", to: "/jewellery", cta: "See the app" },
   { icon: Camera, title: "Social media for jewellers", text: "We come to your shop, shoot your jewellery, edit reels and post them for you.", hash: "pricing", cta: "See packages" },
+  { icon: Code2, title: "Custom software", text: "Need software made for your own business? We design, build and support it, from billing apps to websites.", to: "/custom-software", cta: "Tell us your idea" },
 ];
 
 export const STEPS = [
@@ -101,13 +102,14 @@ export const FAQS = [
   ["Is my data safe and private?", "Each shop's data is kept separate from every other shop. Staff only see what the owner allows, and bills are locked once saved."],
   ["What do the social media packages include?", "Social Basic (₹3,499 a month) gives one shoot a week and 4 reels a month. Social Plus (₹5,499 a month) adds a daily gold rate post, two shoots a week and 8 reels a month. We shoot, edit and post for you."],
   ["Is there a referral offer?", "Yes. Refer another jewellery shop, and when they start using CaratCloud, you get one month of your software plan free. There is no limit on referrals."],
-  ["Do you make software for restaurants, hotels or cafés?", "CaratCloud Dine is coming soon. Message us on WhatsApp and we will tell you as soon as it is ready."],
+  ["Do you make software for restaurants, hotels or cafés?", "Yes. CaratCloud Dine, our restaurant software, launches in January 2027. Message us on WhatsApp to join the early-access list."],
+  ["Can you build custom software for my business?", "Yes. CaratCloud is a software company. Tell us how your business works and we will suggest an app or website, give you a clear price, build it and support it."],
 ];
 
 export const ROADMAP = [
   { when: "Live now", title: "CaratCloud Jewellery", text: "Billing, stock, schemes, dues and girvi for jewellery shops.", live: true },
   { when: "Live now", title: "Social media for jewellers", text: "Shoots, reels and posts done for the shop.", live: true },
-  { when: "Coming soon", title: "CaratCloud Dine", text: "For restaurants, hotels and cafés." },
+  { when: "January 2027", title: "CaratCloud Dine", text: "Restaurant software for restaurants, hotels and cafés." },
   { when: "Next", title: "More local businesses", text: "The same simple software for more shops across India." },
 ];
 
@@ -135,4 +137,45 @@ export const FOUNDER = {
 export const REFERRAL = {
   title: "Refer a jeweller, get a month free",
   text: "When a shop you refer starts using CaratCloud, you get one month of your software plan free. Refer as many shops as you like.",
+};
+
+// Restaurant software page (CaratCloud Dine, launching January 2027)
+export const DINE = {
+  launch: "January 2027",
+  features: [
+    { icon: Receipt, title: "Fast GST billing", text: "Bill a table or a parcel in seconds, print on thermal paper or send the bill on WhatsApp." },
+    { icon: ChefHat, title: "Kitchen orders", text: "Orders go from the counter or the waiter's phone straight to the kitchen, so nothing is missed." },
+    { icon: Languages, title: "Marathi, Hindi, English", text: "Menu, staff screens and bills in the language your team speaks." },
+    { icon: WifiOff, title: "Works without internet", text: "Keep billing during a net cut. Everything syncs when you are back online." },
+    { icon: PackageCheck, title: "Stock and daily sales", text: "See what sold today, what is running low and how much cash and UPI came in." },
+    { icon: Smartphone, title: "Any phone or tablet", text: "Runs on the phones and tablets you already have. No costly machine to buy." },
+  ],
+  faqs: [
+    ["When does CaratCloud Dine launch?", "In January 2027. Restaurants on the early-access list are set up first, with setup and training at your counter."],
+    ["Who is it for?", "Restaurants, hotels, cafés, dhabas and cloud kitchens, starting in Panvel and Navi Mumbai."],
+    ["What will it cost?", "A simple monthly price with no big upfront cost, like CaratCloud Jewellery. We will share the plans before launch."],
+    ["How do I join the early-access list?", "Message us on WhatsApp with your restaurant's name and area. We will call you before launch."],
+  ],
+};
+
+// Custom software page
+export const CUSTOM = {
+  services: [
+    { icon: Smartphone, title: "Business apps", text: "Billing, stock, booking or staff apps made around the way your business already works." },
+    { icon: Globe, title: "Websites", text: "Fast, mobile-friendly websites that show up on Google and bring enquiries to WhatsApp." },
+    { icon: MessagesSquare, title: "WhatsApp and online tools", text: "Order forms, reminders and customer links that save your staff time every day." },
+    { icon: LifeBuoy, title: "Support after launch", text: "We stay with you after launch: fixes, updates and help for your staff." },
+  ],
+  steps: [
+    { icon: MessagesSquare, title: "Tell us the problem", text: "A call or a visit to understand how your business runs today." },
+    { icon: Presentation, title: "Clear plan and price", text: "We show you what we will build, how long it takes and what it costs, before any work starts." },
+    { icon: Code2, title: "We build it", text: "You see working screens as we go and tell us what to change." },
+    { icon: GraduationCap, title: "Launch and training", text: "We set it up, train your staff and keep supporting it." },
+  ],
+  faqs: [
+    ["What kind of software do you build?", "Apps and websites for small and growing businesses: billing, stock, bookings, customer records, and websites that bring enquiries."],
+    ["How much does custom software cost?", "It depends on what you need. After a first call we give you a fixed, written price before any work starts."],
+    ["Do you work only in Navi Mumbai?", "We are based in Panvel, Navi Mumbai and meet local clients in person. We also work with businesses anywhere in India online."],
+    ["Will the software be in Marathi or Hindi?", "Yes, if you want. We build in Marathi, Hindi and English."],
+  ],
 };
