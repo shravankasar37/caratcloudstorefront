@@ -13,7 +13,7 @@ function seoPages() {
   const render = (html, page) =>
     html
       .replace("<!--seo:head-->", headHtml(page))
-      .replace('<div id="root"></div>', `<div id="root">${fallbackHtml(page)}</div>`);
+      .replace('<div id="root"></div>', `<div id="root"><div class="seo-copy">${fallbackHtml(page)}</div></div>`);
   return {
     name: "seo-pages",
     configResolved(c) { outDir = c.build.outDir; },

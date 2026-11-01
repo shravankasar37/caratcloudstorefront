@@ -1,4 +1,5 @@
 import { TopicPage } from "./TopicPage";
+import { DineArt } from "@/components/site/HeroArt";
 import { DINE } from "@/data/caratcloud";
 import { MSG } from "@/lib/site";
 
@@ -6,6 +7,7 @@ export default function RestaurantPage() {
   return (
     <TopicPage
       testid="restaurant-page"
+      art={<DineArt />}
       badge={`CaratCloud Dine · Launching ${DINE.launch}`}
       title="Restaurant software,"
       accent="as simple as your menu."

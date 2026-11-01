@@ -1,4 +1,5 @@
 import { TopicPage } from "./TopicPage";
+import { CustomArt } from "@/components/site/HeroArt";
 import { CUSTOM } from "@/data/caratcloud";
 import { MSG } from "@/lib/site";
 
@@ -6,6 +7,7 @@ export default function CustomSoftwarePage() {
   return (
     <TopicPage
       testid="custom-page"
+      art={<CustomArt />}
       badge="Custom software development · Navi Mumbai"
       title="Software made for"
       accent="your business."
