@@ -31,7 +31,7 @@ export const Footer = () => (
             {SOCIALS.filter((s) => s.href !== "#").map((s) => {
               const I = ICONS[s.key];
               return (
-                <a key={s.key} href={s.href} aria-label={s.label} data-testid={`footer-social-${s.key}`} className="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-navy transition-colors hover:bg-navy hover:text-[#F4E3B0]">
+                <a key={s.key} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`CaratCloud on ${s.label}`} data-testid={`footer-social-${s.key}`} className="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-navy transition-colors hover:bg-navy hover:text-[#F4E3B0]">
                   <I className="h-4 w-4" />
                 </a>
               );

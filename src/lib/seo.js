@@ -2,7 +2,7 @@
 // that crawlers read before JavaScript runs. Used by the app (per-route <head>) and by
 // the build (vite.config.js writes it into each page's index.html).
 import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM } from "../data/caratcloud.js";
-import { PHONE, PHONE_DISPLAY, EMAIL } from "./site.js";
+import { PHONE, PHONE_DISPLAY, EMAIL, SOCIALS } from "./site.js";
 
 export const SITE_URL = "https://caratcloudstorefront.vercel.app";
 export const OG_IMAGE = "og-image.jpg";
@@ -48,6 +48,7 @@ export function jsonLd(path, base = SITE_URL) {
     email: EMAIL,
     telephone: `+91${PHONE}`,
     foundingDate: "2025-08",
+    sameAs: SOCIALS.filter((s) => s.href !== "#").map((s) => s.href),
     address: { "@type": "PostalAddress", addressLocality: "Panvel", addressRegion: "Maharashtra", addressCountry: "IN" },
     areaServed: ["Panvel", "Navi Mumbai", "Maharashtra"],
     founder: { "@type": "Person", name: FOUNDER.name, jobTitle: FOUNDER.role, sameAs: [FOUNDER.linkedin, FOUNDER.portfolio] },

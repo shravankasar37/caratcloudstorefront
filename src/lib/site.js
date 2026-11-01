@@ -23,7 +23,7 @@ export const MSG = {
 export const wa = (msg = MSG.demo) => `https://wa.me/91${PHONE}?text=${encodeURIComponent(msg)}`;
 
 export const SOCIALS = [
-  { key: "instagram", label: "Instagram", href: "#" },
+  { key: "instagram", label: "Instagram", href: "https://www.instagram.com/caratcloud_official/" },
   { key: "facebook", label: "Facebook", href: "#" },
   { key: "youtube", label: "YouTube", href: "#" },
   { key: "linkedin", label: "LinkedIn", href: "#" },
