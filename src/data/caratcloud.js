@@ -74,7 +74,7 @@ export const STEPS = [
   { icon: Presentation, title: "Free demo", text: "We show you the app on your own phone, with your kind of bills." },
   { icon: Store, title: "Setup at your counter", text: "We add your shop details, rates and stock, and design your bill." },
   { icon: GraduationCap, title: "Staff training", text: "Your staff learn billing, schemes and dues, hands-on, in your language." },
-  { icon: LifeBuoy, title: "Local support", text: "A local team on call in Panvel and Navi Mumbai, with regular updates." },
+  { icon: LifeBuoy, title: "Local support", text: "Support on call and in person in Panvel and Navi Mumbai, with regular updates." },
 ];
 
 export const SOCIAL_STEPS = [
@@ -89,8 +89,8 @@ export const WHY_ROWS = [
   ["Works offline, on any phone, tablet or computer", "Needs internet or one fixed PC"],
   ["From ₹499 a month, no big upfront cost", "Large one-time price plus yearly charges"],
   ["Unlimited saving schemes with WhatsApp passbooks", "Schemes in a separate notebook"],
-  ["Setup and training at your shop by a local team", "Phone or email support only"],
-  ["Software and social media from one team", "Separate vendor and agency"],
+  ["Setup and training in person, at your shop", "Phone or email support only"],
+  ["Software and social media from one place", "Separate vendor and agency"],
 ];
 
 export const FAQS = [
@@ -103,7 +103,7 @@ export const FAQS = [
   ["What do the social media packages include?", "Social Basic (₹3,499 a month) gives one shoot a week and 4 reels a month. Social Plus (₹5,499 a month) adds a daily gold rate post, two shoots a week and 8 reels a month. We shoot, edit and post for you."],
   ["Is there a referral offer?", "Yes. Refer another jewellery shop, and when they start using CaratCloud, you get one month of your software plan free. There is no limit on referrals."],
   ["Do you make software for restaurants, hotels or cafés?", "Yes. CaratCloud Dine, our restaurant software, launches in January 2027. Message us on WhatsApp to join the early-access list."],
-  ["Can you build custom software for my business?", "Yes. CaratCloud is a software company. Tell us how your business works and we will suggest an app or website, give you a clear price, build it and support it."],
+  ["Can you build custom software for my business?", "Yes. Message us on WhatsApp: we meet you, listen to your requirements and then send you a quote. No work starts until you are happy with the quote."],
 ];
 
 export const ROADMAP = [
@@ -167,14 +167,14 @@ export const CUSTOM = {
     { icon: LifeBuoy, title: "Support after launch", text: "We stay with you after launch: fixes, updates and help for your staff." },
   ],
   steps: [
-    { icon: MessagesSquare, title: "Tell us the problem", text: "A call or a visit to understand how your business runs today." },
-    { icon: Presentation, title: "Clear plan and price", text: "We show you what we will build, how long it takes and what it costs, before any work starts." },
-    { icon: Code2, title: "We build it", text: "You see working screens as we go and tell us what to change." },
-    { icon: GraduationCap, title: "Launch and training", text: "We set it up, train your staff and keep supporting it." },
+    { icon: MessagesSquare, title: "Reach out", text: "Message or call us on WhatsApp and tell us a little about your business." },
+    { icon: Store, title: "We meet you", text: "We visit your business or talk on a call, and listen to what you need and how you work today." },
+    { icon: Presentation, title: "You get a quote", text: "We send a quote for exactly what you need. No work starts until you are happy with it." },
+    { icon: Code2, title: "Build, launch, support", text: "We build it, show you working screens as we go, train your staff and keep supporting it." },
   ],
   faqs: [
     ["What kind of software do you build?", "Apps and websites for small and growing businesses: billing, stock, bookings, customer records, and websites that bring enquiries."],
-    ["How much does custom software cost?", "It depends on what you need. After a first call we give you a fixed, written price before any work starts."],
+    ["How much does custom software cost?", "Every project is different, so there is no fixed price list. First we meet you, listen to your requirements and then send you a quote for exactly what you need."],
     ["Do you work only in Navi Mumbai?", "We are based in Panvel, Navi Mumbai and meet local clients in person. We also work with businesses anywhere in India online."],
     ["Will the software be in Marathi or Hindi?", "Yes, if you want. We build in Marathi, Hindi and English."],
   ],

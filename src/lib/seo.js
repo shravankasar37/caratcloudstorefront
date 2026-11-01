@@ -28,7 +28,7 @@ export const PAGES = {
   "/custom-software": {
     title: "Custom Software Development in Navi Mumbai & Panvel | CaratCloud",
     description:
-      "Custom software development for small businesses in Navi Mumbai and Panvel: business apps, websites and WhatsApp tools, with a clear price before we start and local support.",
+      "Custom software development for small businesses in Navi Mumbai and Panvel: business apps, websites and WhatsApp tools. We meet you, understand your needs, then send a quote.",
     name: "Custom software",
   },
 };
@@ -133,13 +133,13 @@ export function fallbackHtml(path) {
     return (
       `<main><h1>Restaurant software, as simple as your menu</h1>` +
       `<p>CaratCloud Dine is billing software for restaurants, hotels and cafés, in Marathi, Hindi or English. It launches in ${DINE.launch}.</p>` +
-      cardsHtml("What we are building", DINE.features) + faqHtml(DINE.faqs) + contactHtml() + `<p><a href="/">CaratCloud home</a></p></main>`
+      cardsHtml("Coming in January 2027: what we are building", DINE.features) + faqHtml(DINE.faqs) + contactHtml() + `<p><a href="/">CaratCloud home</a></p></main>`
     );
   }
   if (path === "/custom-software") {
     return (
       `<main><h1>Custom software made for your business</h1>` +
-      `<p>CaratCloud is a software company in Panvel, Navi Mumbai. We build apps and websites around the way your business already works, give you a clear price before we start, and support you after launch.</p>` +
+      `<p>CaratCloud is a software company in Panvel, Navi Mumbai. We build apps and websites around the way your business already works, and support you after launch. To start, reach out on WhatsApp: we meet you, listen to your requirements and then send you a quote.</p>` +
       cardsHtml("What we can build", CUSTOM.services) + `<h2>How we work</h2><ol>${CUSTOM.steps.map((s) => `<li><strong>${esc(s.title)}</strong>. ${esc(s.text)}</li>`).join("")}</ol>` +
       faqHtml(CUSTOM.faqs) + contactHtml() + `<p><a href="/">CaratCloud home</a></p></main>`
     );
