@@ -5,13 +5,14 @@ import { DemoButton } from "@/components/site/Buttons";
 import { Faq } from "@/components/sections/Faq";
 
 // Shared layout for the restaurant and custom software pages: hero, cards, steps and FAQ
-export function TopicPage({ testid, badge, title, accent, intro, msg, cta, cards, cardsTitle, cardsAccent, steps, faqs }) {
+export function TopicPage({ testid, art, badge, title, accent, intro, msg, cta, cards, cardsTitle, cardsAccent, steps, faqs }) {
   return (
     <main data-testid={testid}>
       <section className="relative overflow-hidden grain">
         <div className="absolute inset-0 hairline-grid [mask-image:radial-gradient(70%_60%_at_25%_35%,black,transparent)]" />
         <div className="absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.28),transparent_65%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 pt-32 pb-16 sm:pt-40 lg:pb-24">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 pt-32 pb-16 sm:pt-40 lg:grid-cols-[1.1fr_1fr] lg:pb-24">
+          <div>
           <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-ink-2 hover:text-navy"><ArrowLeft className="h-4 w-4" />Home</Link>
           {badge && <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-gold-deep">{badge}</p>}
           <h1 className="mt-4 max-w-4xl font-display text-[2.6rem] sm:text-6xl lg:text-[4.4rem] font-extrabold leading-[0.97] tracking-[-0.03em] text-navy">
@@ -22,6 +23,8 @@ export function TopicPage({ testid, badge, title, accent, intro, msg, cta, cards
             <p className="mt-7 max-w-2xl text-base md:text-lg leading-relaxed text-ink-2">{intro}</p>
           </Reveal>
           <Reveal delay={0.5} className="mt-9"><DemoButton msg={msg} label={cta} testid={`${testid}-cta`} /></Reveal>
+          </div>
+          {art}
         </div>
       </section>
 
