@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { SectionHead, Reveal } from "../site/Motion";
 import { WhatsAppIcon } from "../site/Buttons";
 import { Phone } from "../site/Phone";
@@ -39,9 +39,6 @@ const Soon = ({ p }) => (
     <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.3),transparent_65%)]" />
     <div className="relative flex items-center gap-3">
       <span className="icon-chip !bg-[#F4E3B0] !text-navy"><p.icon className="h-5 w-5" /></span>
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F4E3B0]/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#F4E3B0]">
-        <Sparkles className="h-3 w-3" />{p.when}
-      </span>
     </div>
     <p className="relative mt-6 font-mono text-xs uppercase tracking-[0.2em] text-[#F4E3B0]/80">{p.tag}</p>
     <h3 className="relative mt-2 font-display text-3xl sm:text-4xl font-extrabold tracking-tight">{p.name} <em className="font-serif-i font-normal text-[#F4E3B0]">{p.accent}</em></h3>

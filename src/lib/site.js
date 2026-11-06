@@ -17,6 +17,9 @@ export const MSG = {
   referral: "Hi CaratCloud, I want to refer a jewellery shop to you.",
   restaurant: "Hi CaratCloud, I run a restaurant / hotel / café. Please add me to the early-access list for CaratCloud Dine.",
   custom: "Hi CaratCloud, I want custom software made for my business.",
+  megaCombo: "Hi CaratCloud, I have an enquiry about the Mega Combo (Social Plus + Standard software + free storefront website) for my jewellery shop.",
+  storefront: "Hi CaratCloud, I want a premium storefront website for my jewellery shop.",
+  template: (n, name) => `Hi CaratCloud, I like website design ${n} (${name}). I want a website like this for my jewellery shop.`,
   general: "Hi CaratCloud, I have an enquiry.",
 };
 
@@ -32,6 +35,7 @@ export const SOCIALS = [
 export const NAV = [
   { label: "Products", hash: "products" },
   { label: "Services", hash: "services" },
+  { label: "Websites", hash: "websites" },
   { label: "How it works", hash: "how-it-works" },
   { label: "Pricing", hash: "pricing" },
   { label: "Founder", hash: "founder" },
