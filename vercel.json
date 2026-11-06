@@ -1,6 +1,50 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.caratcloud.in"
+        }
+      ],
+      "destination": "https://caratcloud.in/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "caratcloudstorefront.vercel.app"
+        }
+      ],
+      "destination": "https://caratcloud.in/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "caratcloudstorefront-idp6.vercel.app"
+        }
+      ],
+      "destination": "https://caratcloud.in/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "caratcloud-official.vercel.app"
+        }
+      ],
+      "destination": "https://caratcloud.in/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
