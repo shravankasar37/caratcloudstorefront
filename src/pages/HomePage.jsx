@@ -2,9 +2,8 @@ import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
-import { TemplatesSection } from "@/components/sections/TemplatesSection";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { PricingSection } from "@/components/sections/PricingSection";
+import { PricingSection, SoftwarePricing } from "@/components/sections/PricingSection";
 import { Founder } from "@/components/sections/Founder";
 import { Why } from "@/components/sections/Why";
 import { Faq } from "@/components/sections/Faq";
@@ -17,7 +16,7 @@ export default function HomePage() {
       <Marquee />
       <ProductsSection />
       <ServicesSection />
-      <TemplatesSection />
+      <SoftwarePricing />
       <HowItWorks />
       <PricingSection />
       <Founder />

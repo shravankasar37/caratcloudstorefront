@@ -44,8 +44,8 @@ export const Footer = () => (
         </Col>
         <Col title="Services">
           <Btn hash="pricing">Software plans</Btn>
-          <Btn hash="pricing">Social media for jewellers</Btn>
-          <Btn hash="pricing">Social + software combo</Btn>
+          <Btn hash="plans">Social media for jewellers</Btn>
+          <Btn hash="plans">Social + software combo</Btn>
           <li><Link to="/custom-software" data-testid="footer-link-custom" className="hover:text-navy">Custom software</Link></li>
         </Col>
         <Col title="Company">
