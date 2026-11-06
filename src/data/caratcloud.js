@@ -57,16 +57,16 @@ export const PLANS = [
 ];
 
 export const SOCIAL = [
-  { name: "Social Basic", price: 3499, items: ["1 shoot a week at your shop for post photos", "4 reels a month", "We set up the shoot, edit and post"] },
+  { name: "Social Basic", price: 3499, items: ["1 shoot a week at your shop for post photos", "6 reels a month", "We set up the shoot, edit and post"] },
   { name: "Social Plus", price: 5499, popular: true, includes: "Everything in Social Basic, plus",
-    items: ["Daily gold rate post", "2 shoots a week", "8 reels a month"] },
+    items: ["Daily gold rate post", "2 shoots a week", "12 reels a month"] },
 ];
 
 export const COMBO = { a: "Social Basic", ap: 3499, b: "Standard software", bp: 799, total: 4000 };
 
 export const SERVICES = [
   { icon: Gem, title: "Jewellery shop software", text: "CaratCloud Jewellery: billing, stock, schemes, dues and girvi in one app.", to: "/jewellery", cta: "See the app" },
-  { icon: Camera, title: "Social media for jewellers", text: "We come to your shop, shoot your jewellery, edit reels and post them for you.", hash: "pricing", cta: "See packages" },
+  { icon: Camera, title: "Social media for jewellers", text: "We come to your shop, shoot your jewellery, edit reels and post them for you.", hash: "plans", cta: "See packages" },
   { icon: Code2, title: "Custom software", text: "Need software made for your own business? We design, build and support it, from billing apps to websites.", to: "/custom-software", cta: "Tell us your idea" },
 ];
 
@@ -100,7 +100,7 @@ export const FAQS = [
   ["Which plan should I choose?", "Starter is enough for a small counter. Standard adds returns, stock checks, CA reports and staff logins. Plus adds orders, girvi, old gold stock, gram schemes and Tally files. You can move up any time."],
   ["Is there a discount for paying yearly?", "Yes. Standard paid yearly is ₹8,789 (1 month free) and Plus paid yearly is ₹12,990 (2 months free). Taxes are extra."],
   ["Is my data safe and private?", "Each shop's data is kept separate from every other shop. Staff only see what the owner allows, and bills are locked once saved."],
-  ["What do the social media packages include?", "Social Basic (₹3,499 a month) gives one shoot a week and 4 reels a month. Social Plus (₹5,499 a month) adds a daily gold rate post, two shoots a week and 8 reels a month. We shoot, edit and post for you."],
+  ["What do the social media packages include?", "Social Basic (₹3,499 a month) gives one shoot a week and 6 reels a month. Social Plus (₹5,499 a month) adds a daily gold rate post, two shoots a week and 12 reels a month. We shoot, edit and post for you."],
   ["Is there a referral offer?", "Yes. Refer another jewellery shop, and when they start using CaratCloud, you get one month of your software plan free. There is no limit on referrals."],
   ["Do you make software for restaurants, hotels or cafés?", "Yes. CaratCloud Dine, our restaurant software, launches in January 2027. Message us on WhatsApp to join the early-access list."],
   ["Can you build custom software for my business?", "Yes. Message us on WhatsApp: we meet you, listen to your requirements and then send you a quote. No work starts until you are happy with the quote."],

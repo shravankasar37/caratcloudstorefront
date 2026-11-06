@@ -9,6 +9,7 @@ import HomePage from "@/pages/HomePage";
 import JewelleryPage from "@/pages/JewelleryPage";
 import RestaurantPage from "@/pages/RestaurantPage";
 import CustomSoftwarePage from "@/pages/CustomSoftwarePage";
+import PrivacyPage from "@/pages/PrivacyPage";
 import { PageMeta } from "@/components/site/PageMeta";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/jewellery" element={<JewelleryPage />} />
         <Route path="/restaurant-software" element={<RestaurantPage />} />
         <Route path="/custom-software" element={<CustomSoftwarePage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/jewellery-erp" element={<Navigate to="/jewellery" replace />} />
         <Route path="*" element={<HomePage />} />
       </Routes>

@@ -44,8 +44,8 @@ export const Footer = () => (
         </Col>
         <Col title="Services">
           <Btn hash="pricing">Software plans</Btn>
-          <Btn hash="pricing">Social media for jewellers</Btn>
-          <Btn hash="pricing">Social + software combo</Btn>
+          <Btn hash="plans">Social media for jewellers</Btn>
+          <Btn hash="plans">Social + software combo</Btn>
           <li><Link to="/custom-software" data-testid="footer-link-custom" className="hover:text-navy">Custom software</Link></li>
         </Col>
         <Col title="Company">
@@ -60,12 +60,12 @@ export const Footer = () => (
           <li className="flex gap-2.5"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" /><span>{ADDRESS}</span></li>
         </Col>
       </div>
-      <div className="mt-14 overflow-hidden">
-        <p className="font-display font-extrabold tracking-tighter text-navy/[0.07] leading-none text-[22vw] lg:text-[15rem] select-none" aria-hidden="true">CaratCloud</p>
+      <div className="mt-14 overflow-hidden" style={{ containerType: "inline-size" }}>
+        <p className="whitespace-nowrap font-display font-extrabold tracking-tighter leading-none select-none" style={{ fontSize: "min(15rem, 20cqw)" }} aria-hidden="true" data-testid="footer-wordmark"><span className="text-[#0d1b33]">Carat</span><span className="text-[#C8961C]">Cloud</span></p>
       </div>
       <div className="flex flex-col gap-2 border-t border-line pt-6 text-sm text-ink-2 sm:flex-row sm:justify-between">
         <p data-testid="footer-copyright">© {new Date().getFullYear()} CaratCloud. All rights reserved.</p>
-        <p>Made in Panvel, Navi Mumbai</p>
+        <p className="flex flex-wrap gap-x-4 gap-y-1"><Link to="/privacy" className="hover:text-navy" data-testid="footer-privacy">Privacy policy</Link><span>Made in Panvel, Navi Mumbai</span></p>
       </div>
     </div>
   </footer>
