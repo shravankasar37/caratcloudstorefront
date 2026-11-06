@@ -3,6 +3,7 @@
 // the build (vite.config.js writes it into each page's index.html).
 import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM } from "../data/caratcloud.js";
 import { PHONE, PHONE_DISPLAY, EMAIL, SOCIALS } from "./site.js";
+import { PRIVACY } from "../data/privacy.js";
 
 export const SITE_URL = "https://caratcloud.in";
 export const OG_IMAGE = "og-image.jpg";
@@ -30,6 +31,11 @@ export const PAGES = {
     description:
       "Custom software development for small businesses in Navi Mumbai and Panvel: business apps, websites and WhatsApp tools. We meet you, understand your needs, then send a quote.",
     name: "Custom software",
+  },
+  "/privacy": {
+    title: "Privacy Policy | CaratCloud",
+    description: "How CaratCloud handles your data on caratcloud.in and in the CaratCloud software: what we collect, why, how long we keep it and your rights under India's DPDP Act, 2023.",
+    name: "Privacy policy",
   },
 };
 
@@ -130,6 +136,13 @@ const faqHtml = (faqs) => `<h2>Questions</h2><dl>${faqs.map(([q, a]) => `<dt>${e
 const cardsHtml = (h, cards) => `<h2>${h}</h2><ul>${cards.map((c) => `<li><strong>${esc(c.title)}</strong>: ${esc(c.text)}</li>`).join("")}</ul>`;
 
 export function fallbackHtml(path) {
+  if (path === "/privacy") {
+    return (
+      `<main><h1>CaratCloud privacy policy</h1><p>Last updated: ${esc(PRIVACY.updated)}</p><p>${esc(PRIVACY.intro)}</p>` +
+      PRIVACY.sections.map(([t, ps]) => `<h2>${esc(t)}</h2><ul>${ps.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>`).join("") +
+      `<p><a href="/">CaratCloud home</a></p></main>`
+    );
+  }
   if (path === "/restaurant-software") {
     return (
       `<main><h1>Restaurant software, as simple as your menu</h1>` +
