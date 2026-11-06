@@ -9,13 +9,7 @@ import { wa, MSG } from "@/lib/site";
 const Live = ({ p }) => (
   <Link to={p.to} className="card card-hover group grid h-full overflow-hidden lg:grid-cols-[1.2fr_1fr]" data-testid={`product-card-${p.key}`}>
     <div className="flex flex-col p-7 sm:p-10">
-      <div className="flex items-center gap-3">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ECFDF5] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#047857]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />Live
-        </span>
-      </div>
-      <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-gold-deep">{p.tag}</p>
-      <h3 className="mt-2 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">{p.name} <em className="font-serif-i font-normal text-gold-deep">{p.accent}</em></h3>
+      <h3 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-navy">{p.name} <em className="font-serif-i font-normal text-gold-deep">{p.accent}</em></h3>
       <p className="mt-4 text-[15px] leading-relaxed text-ink-2">{p.text}</p>
       <ul className="mt-6 grid gap-2.5">
         {p.points.map((t) => <li key={t} className="flex gap-2.5 text-[15px] font-medium text-navy"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{t}</li>)}
@@ -36,8 +30,7 @@ const Live = ({ p }) => (
 const Soon = ({ p }) => (
   <div className="relative flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-navy bg-navy p-7 sm:p-10 text-white" data-testid={`product-card-${p.key}`}>
     <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.3),transparent_65%)]" />
-    <p className="relative font-mono text-xs uppercase tracking-[0.2em] text-[#F4E3B0]/80">{p.tag}</p>
-    <h3 className="relative mt-2 font-display text-3xl sm:text-4xl font-extrabold tracking-tight">{p.name} <em className="font-serif-i font-normal text-[#F4E3B0]">{p.accent}</em></h3>
+    <h3 className="relative font-display text-3xl sm:text-4xl font-extrabold tracking-tight">{p.name} <em className="font-serif-i font-normal text-[#F4E3B0]">{p.accent}</em></h3>
     <p className="relative mt-4 text-[15px] leading-relaxed text-[#D5DBE6]">{p.text}</p>
     <div className="relative mt-auto flex flex-wrap items-center gap-4 !mt-8">
       <a href={wa(MSG.restaurant)} target="_blank" rel="noopener noreferrer" className="btn-gold" data-testid="product-dine-waitlist">
