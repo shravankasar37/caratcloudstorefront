@@ -4,6 +4,7 @@ import { SectionHead, Reveal } from "../site/Motion";
 import { DemoButton } from "../site/Buttons";
 import { PLANS, SOCIAL, COMBO, REFERRAL, MEGA_COMBO, STOREFRONT } from "@/data/caratcloud";
 import { MSG, wa, scrollToId } from "@/lib/site";
+import { TemplatesGroup } from "./TemplatesSection";
 
 const inr = (n) => `₹${n.toLocaleString("en-IN")}`;
 
@@ -27,8 +28,8 @@ const Card = ({ popular, children, testid }) => (
   </div>
 );
 
-const GroupHead = ({ n, title, sub, children }) => (
-  <div className="mb-8 mt-16 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-end sm:justify-between">
+export const GroupHead = ({ n, title, sub, children, first = false }) => (
+  <div className={`mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between ${first ? "" : "mt-16 border-t border-line pt-8"}`}>
     <div>
       <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-navy"><span className="mr-3 font-mono text-sm text-gold-deep">{n}</span>{title}</h3>
       {sub && <p className="mt-1 text-sm text-ink-2">{sub}</p>}
@@ -48,11 +49,11 @@ const Toggle = ({ yearly, setYearly }) => (
   </div>
 );
 
-export const SoftwarePlans = ({ compact = false }) => {
+export const SoftwarePlans = ({ compact = false, first = false }) => {
   const [yearly, setYearly] = useState(false);
   return (
     <>
-      <GroupHead n="01" title="CaratCloud Jewellery" sub="Software plans · taxes extra · move up any time"><Toggle yearly={yearly} setYearly={setYearly} /></GroupHead>
+      <GroupHead first={first} n="01" title="CaratCloud Jewellery" sub="Software plans · taxes extra · move up any time"><Toggle yearly={yearly} setYearly={setYearly} /></GroupHead>
       <div className="grid gap-5 lg:grid-cols-3">
         {PLANS.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.08} className="h-full">
@@ -99,7 +100,7 @@ export const Referral = () => (
 
 export const SocialPlans = () => (
   <>
-    <GroupHead n="02" title="Social media for jewellers" sub="Instagram + Facebook · we shoot at your shop" />
+    <GroupHead n="03" title="Social media for jewellers" sub="Instagram + Facebook · we shoot at your shop" />
     <div className="grid gap-5 lg:grid-cols-[1fr_1fr_1.15fr]">
       {SOCIAL.map((p, i) => (
         <Reveal key={p.name} delay={i * 0.08} className="h-full">
@@ -148,7 +149,7 @@ export const SpecialOffers = () => {
   const m = MEGA_COMBO;
   return (
     <>
-      <GroupHead n="03" title="Special offers" sub="Limited-period prices · taxes extra" />
+      <GroupHead n="04" title="Special offers" sub="Limited-period prices · taxes extra" />
       <div className="grid gap-5 lg:grid-cols-2">
         <Reveal className="h-full">
           <div className="relative flex h-full flex-col items-center overflow-hidden rounded-[1.6rem] border border-[#C9971C]/60 bg-[linear-gradient(160deg,#FFFBF0,#F6E9C8)] p-7 text-center sm:p-9" data-testid="offer-mega-combo">
@@ -188,10 +189,18 @@ export const SpecialOffers = () => {
   );
 };
 
+// Main product first: the jewellery software plans sit high on the home page
+export const SoftwarePricing = () => (
+  <section id="pricing" className="section" data-testid="software-pricing-section">
+    <SoftwarePlans first />
+  </section>
+);
+
+// Everything else we sell: storefront websites, social media, offers
 export const PricingSection = () => (
-  <section id="pricing" className="section" data-testid="pricing-section">
-    <SectionHead eyebrow="Pricing" title="Simple monthly prices." accent="No big upfront cost." sub="Start with the software, add social media when you are ready. All prices are per month, taxes extra." />
-    <SoftwarePlans />
+  <section id="plans" className="section" data-testid="pricing-section">
+    <SectionHead eyebrow="More for your shop" title="Simple monthly prices." accent="No big upfront cost." sub="Add a website and social media when you are ready. All prices are per month, taxes extra." />
+    <TemplatesGroup />
     <SocialPlans />
     <SpecialOffers />
   </section>
