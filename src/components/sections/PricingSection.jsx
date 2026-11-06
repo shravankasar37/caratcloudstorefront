@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Check, Plus, Equal, Gift } from "lucide-react";
+import { Check, Plus, Equal, Gift, Eye } from "lucide-react";
 import { SectionHead, Reveal } from "../site/Motion";
 import { DemoButton } from "../site/Buttons";
-import { PLANS, SOCIAL, COMBO, REFERRAL } from "@/data/caratcloud";
-import { MSG, wa } from "@/lib/site";
+import { PLANS, SOCIAL, COMBO, REFERRAL, MEGA_COMBO, STOREFRONT } from "@/data/caratcloud";
+import { MSG, wa, scrollToId } from "@/lib/site";
 
 const inr = (n) => `₹${n.toLocaleString("en-IN")}`;
 
@@ -144,10 +144,55 @@ export const SocialPlans = () => (
   </>
 );
 
+export const SpecialOffers = () => {
+  const m = MEGA_COMBO;
+  return (
+    <>
+      <GroupHead n="03" title="Special offers" sub="Limited-period prices · taxes extra" />
+      <div className="grid gap-5 lg:grid-cols-2">
+        <Reveal className="h-full">
+          <div className="relative flex h-full flex-col items-center overflow-hidden rounded-[1.6rem] border border-[#C9971C]/60 bg-[linear-gradient(160deg,#FFFBF0,#F6E9C8)] p-7 text-center sm:p-9" data-testid="offer-mega-combo">
+            <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.35),transparent_65%)]" />
+            <p className="relative font-serif-i text-5xl text-gold-deep">Mega Combo</p>
+            <p className="relative mt-2 font-display text-lg font-bold text-navy">{m.a} + {m.b} software</p>
+            <p className="relative mt-4 flex items-baseline gap-2">
+              <s className="font-display text-xl text-ink-3">{inr(m.ap + m.bp)}</s>
+              <span className="font-display text-5xl font-extrabold tracking-tight text-navy">{inr(m.total)}</span>
+              <span className="text-sm text-ink-3">/ month</span>
+            </p>
+            <p className="relative mt-4 inline-flex items-center gap-2 rounded-full border border-[#C9971C] bg-white/70 px-4 py-1.5 text-sm font-semibold text-navy"><Gift className="h-4 w-4 text-gold" />{m.gift}</p>
+            <p className="relative mt-3 rounded-full bg-[#047857] px-3 py-1 text-sm font-semibold text-white">Save {inr((m.ap + m.bp - m.total) * 12)} a year</p>
+            <div className="relative mt-auto w-full pt-7">
+              <DemoButton className="w-full justify-center" label="Ask about the Mega Combo" msg={MSG.megaCombo} testid="offer-mega-combo-button" />
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={0.08} className="h-full">
+          <div className="relative flex h-full flex-col items-center overflow-hidden rounded-[1.6rem] border border-[#C9971C]/60 bg-[#FFFDF7] p-7 text-center sm:p-9" data-testid="offer-storefront">
+            <p className="font-display text-2xl font-extrabold text-navy sm:text-3xl">Premium Online Store Website</p>
+            <p className="mt-2 max-w-sm text-[15px] text-ink-2">Your shop's own premium website. Show your designs online, in your shop's name.</p>
+            <p className="mt-5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#047857]">Now only</p>
+            <p className="mt-1 flex items-baseline gap-2">
+              <span className="font-display text-5xl font-extrabold tracking-tight text-navy">{inr(STOREFRONT.price)}</span>
+              <span className="text-sm text-ink-3">/ month</span>
+            </p>
+            <p className="mt-3 text-sm text-ink-3">15 ready designs · works on every phone</p>
+            <div className="mt-auto flex w-full flex-col gap-3 pt-7 sm:flex-row">
+              <button type="button" onClick={() => scrollToId("websites")} className="btn-ghost w-full justify-center" data-testid="offer-storefront-designs"><Eye className="h-4 w-4" /> See the 15 designs</button>
+              <DemoButton className="w-full justify-center" label="Ask about it" msg={MSG.storefront} />
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </>
+  );
+};
+
 export const PricingSection = () => (
   <section id="pricing" className="section" data-testid="pricing-section">
     <SectionHead eyebrow="Pricing" title="Simple monthly prices." accent="No big upfront cost." sub="Start with the software, add social media when you are ready. All prices are per month, taxes extra." />
     <SoftwarePlans />
     <SocialPlans />
+    <SpecialOffers />
   </section>
 );

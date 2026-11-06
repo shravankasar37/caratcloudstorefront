@@ -33,7 +33,6 @@ export const ServicesSection = () => (
         <div className="card grid overflow-hidden md:grid-cols-[1fr_1.3fr]" data-testid="social-explainer">
           <div className="relative min-h-[260px] bg-navy">
             <img src={asset("img/reel.jpg")} alt="Shooting a jewellery reel on a phone" className="absolute inset-0 h-full w-full object-cover opacity-80" />
-            <span className="placeholder-tag left-4 top-4">Representative photo</span>
           </div>
           <div className="p-7 sm:p-10">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold-deep">Social media, done for you</p>

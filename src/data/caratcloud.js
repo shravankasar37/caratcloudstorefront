@@ -179,3 +179,31 @@ export const CUSTOM = {
     ["Will the software be in Marathi or Hindi?", "Yes, if you want. We build in Marathi, Hindi and English."],
   ],
 };
+
+// Premium storefront website: 15 live templates (hosted on caratcloud-templates.vercel.app)
+export const TEMPLATE_BASE = "https://caratcloud-templates.vercel.app";
+export const TEMPLATES = [
+  ["t01-maison", "Maison", "Clean luxury, search-first"],
+  ["t02-pearl", "Pearl", "Online catalogue with filters"],
+  ["t03-rani", "Rani", "Royal maroon and gold"],
+  ["t04-showroom", "Showroom", "A walk through your shop"],
+  ["t05-deco", "Emerald Deco", "Art-deco emerald luxury"],
+  ["t06-blush", "Blush", "Light, daily-wear gold"],
+  ["t07-bento", "Bento", "Modern grid with live gold rate"],
+  ["t08-split", "Split", "Editorial split screen"],
+  ["t09-vivaah", "Vivaah Bridal", "Made for wedding shopping"],
+  ["t10-marigold", "Marigold", "Festive and gifting"],
+  ["t11-gallery", "Gallery", "Minimal, art-gallery style"],
+  ["t12-sapphire", "Sapphire", "Dark and premium, for diamonds"],
+  ["t13-bold", "Bold", "Big type, fashion-forward"],
+  ["t14-heritage", "Heritage", "Family legacy, classic print look"],
+  ["t15-cinematic", "Cinematic", "Dark, story-led showcase"],
+].map(([slug, name, style], i) => ({ slug, name, style, n: String(i + 1).padStart(2, "0"), url: `${TEMPLATE_BASE}/${slug}/` }));
+
+export const STOREFRONT = {
+  price: 2499,
+  points: ["Your shop's own premium website", "Show your designs online, with prices on WhatsApp", "Live gold rate, Google Maps and WhatsApp chat", "Choose any of 15 designs, made in your shop's name"],
+};
+
+// Special offers (Social Plus 5,499 + Standard 799 = 6,298 → 5,699)
+export const MEGA_COMBO = { a: "Social Plus", ap: 5499, b: "Standard", bp: 799, total: 5699, gift: "FREE premium storefront website" };
