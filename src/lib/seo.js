@@ -4,7 +4,7 @@
 import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM } from "../data/caratcloud.js";
 import { PHONE, PHONE_DISPLAY, EMAIL, SOCIALS } from "./site.js";
 
-export const SITE_URL = "https://caratcloudstorefront.vercel.app";
+export const SITE_URL = "https://caratcloud.in";
 export const OG_IMAGE = "og-image.jpg";
 
 export const PAGES = {
