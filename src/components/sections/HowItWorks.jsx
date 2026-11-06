@@ -15,7 +15,7 @@ export const HowItWorks = () => (
         {STEPS.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08} as="li">
             <div className="relative flex gap-5 rounded-2xl border border-line bg-white p-5 sm:p-6" data-testid={`how-step-${i + 1}`}>
-              <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-navy text-[#F4E3B0]"><s.icon className="h-6 w-6" /></span>
+              <span className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-navy font-display text-xl font-extrabold text-[#F4E3B0]">0{i + 1}</span>
               <div>
                 <p className="font-mono text-xs text-gold-deep">Step 0{i + 1}</p>
                 <p className="font-display text-xl font-bold text-navy">{s.title}</p>

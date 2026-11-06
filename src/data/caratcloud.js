@@ -66,7 +66,7 @@ export const COMBO = { a: "Social Basic", ap: 3499, b: "Standard software", bp: 
 
 export const SERVICES = [
   { icon: Gem, title: "Jewellery shop software", text: "CaratCloud Jewellery: billing, stock, schemes, dues and girvi in one app.", to: "/jewellery", cta: "See the app" },
-  { icon: Camera, title: "Social media for jewellers", text: "We come to your shop, shoot your jewellery, edit reels and post them for you.", hash: "pricing", cta: "See packages" },
+  { icon: Camera, title: "Social media for jewellers", text: "We come to your shop, shoot your jewellery, edit reels and post them for you.", hash: "plans", cta: "See packages" },
   { icon: Code2, title: "Custom software", text: "Need software made for your own business? We design, build and support it, from billing apps to websites.", to: "/custom-software", cta: "Tell us your idea" },
 ];
 

@@ -29,13 +29,7 @@ export const Founder = () => (
         </Reveal>
 
         <div>
-          <Reveal delay={0.08}>
-            <div className="space-y-5 text-base md:text-lg leading-relaxed text-ink-2" data-testid="founder-about">
-              {FOUNDER.about.map((p) => <p key={p}>{p}</p>)}
-            </div>
-          </Reveal>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2">
             <Reveal delay={0.12} className="h-full">
               <div className="relative h-full overflow-hidden rounded-[1.6rem] bg-navy p-7 text-white" data-testid="founder-vision">
                 <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.35),transparent_65%)]" />

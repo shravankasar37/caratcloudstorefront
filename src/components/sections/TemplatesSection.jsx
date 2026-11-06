@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, ChevronLeft, ChevronRight, Eye, Monitor, Smartphone, Check } from "lucide-react";
-import { SectionHead, Reveal } from "../site/Motion";
+import { Reveal } from "../site/Motion";
+import { GroupHead } from "./PricingSection";
 import { WhatsAppIcon } from "../site/Buttons";
 import { TEMPLATES, STOREFRONT } from "@/data/caratcloud";
 import { wa, MSG, asset } from "@/lib/site";
@@ -69,7 +70,7 @@ const Preview = ({ index, setIndex, onClose }) => {
   );
 };
 
-export const TemplatesSection = () => {
+export const TemplatesGroup = () => {
   const [index, setIndex] = useState(null);
   const open = index !== null;
 
@@ -98,10 +99,10 @@ export const TemplatesSection = () => {
   }, [open]);
 
   return (
-    <section id="websites" className="section" data-testid="templates-section">
-      <SectionHead eyebrow="Storefront websites" title="Your jewellery shop," accent="online in your own name." sub="We also build premium storefront websites for jewellers. Pick a design below, tap it to see the live website, and we make it with your shop's name, photos and designs." />
+    <div id="websites" className="scroll-mt-24" data-testid="templates-section">
+      <GroupHead n="02" title="Premium storefront websites" sub="15 ready designs · tap a design to see it live" />
 
-      <Reveal className="mt-10">
+      <Reveal>
         <div className="flex flex-col gap-5 rounded-[1.6rem] border border-line bg-cream p-6 sm:p-7 lg:flex-row lg:items-center lg:justify-between">
           <ul className="grid gap-2 sm:grid-cols-2 sm:gap-x-8">
             {STOREFRONT.points.map((p) => <li key={p} className="flex gap-2.5 text-[15px] text-ink-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{p}</li>)}
@@ -149,6 +150,6 @@ export const TemplatesSection = () => {
       </Reveal>
 
       {open && <Preview index={index} setIndex={setIndex} onClose={close} />}
-    </section>
+    </div>
   );
 };
