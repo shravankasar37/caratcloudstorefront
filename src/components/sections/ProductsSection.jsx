@@ -10,7 +10,6 @@ const Live = ({ p }) => (
   <Link to={p.to} className="card card-hover group grid h-full overflow-hidden lg:grid-cols-[1.2fr_1fr]" data-testid={`product-card-${p.key}`}>
     <div className="flex flex-col p-7 sm:p-10">
       <div className="flex items-center gap-3">
-        <span className="icon-chip"><p.icon className="h-5 w-5" /></span>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ECFDF5] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#047857]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />Live
         </span>
@@ -37,10 +36,7 @@ const Live = ({ p }) => (
 const Soon = ({ p }) => (
   <div className="relative flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-navy bg-navy p-7 sm:p-10 text-white" data-testid={`product-card-${p.key}`}>
     <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.3),transparent_65%)]" />
-    <div className="relative flex items-center gap-3">
-      <span className="icon-chip !bg-[#F4E3B0] !text-navy"><p.icon className="h-5 w-5" /></span>
-    </div>
-    <p className="relative mt-6 font-mono text-xs uppercase tracking-[0.2em] text-[#F4E3B0]/80">{p.tag}</p>
+    <p className="relative font-mono text-xs uppercase tracking-[0.2em] text-[#F4E3B0]/80">{p.tag}</p>
     <h3 className="relative mt-2 font-display text-3xl sm:text-4xl font-extrabold tracking-tight">{p.name} <em className="font-serif-i font-normal text-[#F4E3B0]">{p.accent}</em></h3>
     <p className="relative mt-4 text-[15px] leading-relaxed text-[#D5DBE6]">{p.text}</p>
     <div className="relative mt-auto flex flex-wrap items-center gap-4 !mt-8">
