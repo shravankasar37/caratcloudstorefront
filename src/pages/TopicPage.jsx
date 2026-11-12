@@ -5,7 +5,7 @@ import { DemoButton } from "@/components/site/Buttons";
 import { Faq } from "@/components/sections/Faq";
 
 // Shared layout for the restaurant and custom software pages: hero, cards, steps and FAQ
-export function TopicPage({ testid, art, badge, title, accent, intro, msg, cta, cards, cardsTitle, cardsAccent, steps, faqs }) {
+export function TopicPage({ testid, art, badge, title, accent, intro, msg, cta, cards, cardsTitle, cardsAccent, steps, faqs, children }) {
   return (
     <main data-testid={testid}>
       <section className="relative overflow-hidden grain">
@@ -58,6 +58,7 @@ export function TopicPage({ testid, art, badge, title, accent, intro, msg, cta, 
         </section>
       )}
 
+      {children}
       <Faq items={faqs} msg={msg} />
     </main>
   );

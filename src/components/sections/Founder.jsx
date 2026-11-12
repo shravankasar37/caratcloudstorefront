@@ -1,4 +1,5 @@
-import { Quote, Target, Compass, Linkedin, Globe, Check } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Quote, Target, Compass, Linkedin, Globe, Check } from "lucide-react";
 import { SectionHead, Reveal } from "../site/Motion";
 import { FOUNDER, ROADMAP } from "@/data/caratcloud";
 import { asset } from "@/lib/site";
@@ -21,9 +22,10 @@ export const Founder = () => (
                 <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-[#D5DBE6]">{FOUNDER.since}</p>
               </div>
             </div>
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <a href={FOUNDER.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2.5 !text-sm" data-testid="founder-linkedin"><Linkedin className="h-4 w-4" />LinkedIn</a>
-              <a href={FOUNDER.portfolio} target="_blank" rel="noopener noreferrer" className="btn-ghost !px-4 !py-2.5 !text-sm" data-testid="founder-portfolio"><Globe className="h-4 w-4" />Portfolio</a>
+              <a href={FOUNDER.portfolio} target="_blank" rel="noopener" className="btn-ghost !px-4 !py-2.5 !text-sm" data-testid="founder-portfolio"><Globe className="h-4 w-4" />Portfolio</a>
+              <Link to="/founder" className="btn-ghost !px-4 !py-2.5 !text-sm" data-testid="founder-more">About Shravan<ArrowUpRight className="h-4 w-4" /></Link>
             </div>
           </figure>
         </Reveal>

@@ -120,6 +120,15 @@ export const FOUNDER = {
   since: "Founded August 2025 · Navi Mumbai",
   linkedin: "https://www.linkedin.com/in/shravan-kasar-2445962a9",
   portfolio: "https://shravankasar.vercel.app",
+  github: "https://github.com/shravankasar37",
+  huggingface: "https://huggingface.co/shravan37",
+  kaggle: "https://www.kaggle.com/shravankasar37",
+  // personal profiles: add the links when ready and they flow into the founder page + schema
+  instagram: "",
+  youtube: "",
+  headline: "Founder of CaratCloud · Software developer & AI engineer · Navi Mumbai",
+  bio: "Shravan Kasar is the founder of CaratCloud, a software company in Panvel, Navi Mumbai. He builds billing software for jewellery shops, websites and social media for jewellers, and AI products. He studies B.Tech Information Technology at Pillai College of Engineering.",
+  college: "Pillai College of Engineering",
   about: [
     "I'm a B.Tech Information Technology student at Pillai College of Engineering, and I started CaratCloud in August 2025.",
     "Talking to jewellers around Panvel, I kept hearing the same thing: software is too complicated, it's only in English, and it costs too much up front. So bills, schemes and dues stayed in notebooks.",
@@ -207,3 +216,30 @@ export const STOREFRONT = {
 
 // Special offers (Social Plus 5,499 + Standard 799 = 6,298 → 5,699)
 export const MEGA_COMBO = { a: "Social Plus", ap: 5499, b: "Standard", bp: 799, total: 5699, gift: "FREE premium storefront website" };
+
+// /jewellery-software-panvel: local page for jewellers in Panvel and nearby
+export const PANVEL = {
+  areas: ["Panvel", "New Panvel", "Kamothe", "Kharghar", "Kalamboli", "Khandeshwar", "Taloja", "Ulwe", "Karanjade", "Navi Mumbai"],
+  reasons: [
+    { icon: Store, title: "We come to your shop", text: "We are based in Panvel. We give the demo at your counter, set the software up there and train your staff in person." },
+    { icon: LifeBuoy, title: "Support within 1 hour", text: "Call or WhatsApp us with any problem and we help online within an hour. If a shop visit is needed, we come within 24 hours." },
+    { icon: Languages, title: "Marathi, Hindi or English", text: "Bills, reports and the whole app work in the language your staff are comfortable with." },
+    { icon: ScanLine, title: "Bill in under a minute", text: "Scan the QR tag and weight, rate, making, GST and HUID fill in by themselves. Share the bill as a WhatsApp PDF." },
+    { icon: PiggyBank, title: "Schemes, dues and girvi", text: "Saving schemes with a WhatsApp passbook, customer dues, girvi with interest, and old gold, all in one app." },
+    { icon: Smartphone, title: "Phone, tablet or laptop", text: "Use the phone you already have. Works offline at the counter and syncs when the internet is back." },
+  ],
+  steps: [
+    { title: "Message us", text: "Send a WhatsApp or call. We fix a time that suits your shop." },
+    { title: "Free demo at your shop", text: "We show the software with your own designs and prices." },
+    { title: "Setup and training", text: "We add your stock, print QR tags and train your staff." },
+    { title: "Support every day", text: "Help on call and WhatsApp within an hour, and visits when needed." },
+  ],
+  faqs: [
+    ["Which is the best jewellery billing software in Panvel?", "Choose software that is simple for your staff, works in Marathi or Hindi, and has someone local to support you. CaratCloud is made in Panvel: we give the demo at your shop, set it up in person and answer support calls within an hour. Plans start at ₹499 a month."],
+    ["Do you give a free demo in Panvel?", "Yes. We come to your shop in Panvel, New Panvel, Kamothe, Kharghar, Kalamboli, Taloja or nearby areas and show the software for free, with no commitment."],
+    ["Which jewellery shops in the Panvel area use CaratCloud?", "Jewellery shops around Panvel use CaratCloud every day, including New Hareshwar Jewellers (Chavan Bandhu) in Kamothe and RJ Gold in Taloja."],
+    ["How much does jewellery software cost?", "CaratCloud costs ₹499 a month (Starter, 1 login), ₹799 a month (Standard, 3 logins) or ₹1,299 a month (Plus, 8 logins). Taxes extra. There is no big upfront payment."],
+    ["Does it handle GST and HUID?", "Yes. Every bill has GST worked out and the HUID printed. You also get GST reports and copies for your CA."],
+    ["Can I use it without internet?", "Yes. Billing works offline and everything syncs when the internet is back."],
+  ],
+};

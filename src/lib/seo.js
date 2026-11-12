@@ -1,7 +1,8 @@
 // SEO for every page: titles, descriptions, structured data and the plain-HTML copy
 // that crawlers read before JavaScript runs. Used by the app (per-route <head>) and by
 // the build (vite.config.js writes it into each page's index.html).
-import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM, TEMPLATES, STOREFRONT } from "../data/caratcloud.js";
+import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM, TEMPLATES, STOREFRONT, PANVEL } from "../data/caratcloud.js";
+import { TESTIMONIALS } from "../data/testimonials.js";
 import { PHONE, PHONE_DISPLAY, EMAIL, SOCIALS } from "./site.js";
 import { PRIVACY } from "../data/privacy.js";
 
@@ -10,7 +11,7 @@ export const OG_IMAGE = "og-image.jpg";
 
 export const PAGES = {
   "/": {
-    title: "CaratCloud | Jewellery & Restaurant Software Company, Navi Mumbai",
+    title: "CaratCloud | Jewellery Software in Panvel & Navi Mumbai, Restaurant Software",
     description:
       "CaratCloud is a software company in Navi Mumbai. Jewellery billing software in Marathi, Hindi & English from ₹499/month, restaurant software from Jan 2027, and custom software.",
   },
@@ -37,6 +38,18 @@ export const PAGES = {
     description: "See 15 ready website designs for jewellery shops, live. Your shop's own premium website with designs, live gold rate, Google Maps and WhatsApp, from ₹2,499 a month.",
     name: "Website designs",
   },
+  "/jewellery-software-panvel": {
+    title: "Jewellery Software in Panvel | Billing, GST & HUID | CaratCloud",
+    description:
+      "Jewellery billing software made in Panvel: GST + HUID bills in under a minute, stock, saving schemes, dues and girvi in Marathi, Hindi & English. Free demo at your shop. From ₹499/month.",
+    name: "Jewellery software in Panvel",
+  },
+  "/founder": {
+    title: "Shravan Kasar, Founder of CaratCloud | Software Developer, Navi Mumbai",
+    description:
+      "Shravan Kasar is the founder of CaratCloud, a software company in Panvel, Navi Mumbai: jewellery billing software, websites and social media for jewellers, and AI products.",
+    name: "Founder",
+  },
   "/privacy": {
     title: "Privacy Policy | CaratCloud",
     description: "How CaratCloud handles your data on caratcloud.in and in the CaratCloud software: what we collect, why, how long we keep it and your rights under India's DPDP Act, 2023.",
@@ -47,7 +60,26 @@ export const PAGES = {
 const url = (base, path) => base.replace(/\/$/, "") + path;
 const inr = (n) => `₹${n.toLocaleString("en-IN")}`;
 
+export const founderLinks = () =>
+  [FOUNDER.portfolio, FOUNDER.linkedin, FOUNDER.github, FOUNDER.instagram, FOUNDER.youtube, FOUNDER.huggingface, FOUNDER.kaggle].filter(Boolean);
+
 export function jsonLd(path, base = SITE_URL) {
+  const person = {
+    "@type": "Person",
+    "@id": url(base, "/founder#person"),
+    name: FOUNDER.name,
+    givenName: "Shravan",
+    familyName: "Kasar",
+    jobTitle: "Founder",
+    description: FOUNDER.bio,
+    image: url(base, "/" + FOUNDER.photo),
+    url: url(base, "/founder"),
+    worksFor: { "@id": url(base, "/#org") },
+    alumniOf: { "@type": "CollegeOrUniversity", name: FOUNDER.college },
+    homeLocation: { "@type": "Place", name: "Navi Mumbai, Maharashtra, India" },
+    knowsAbout: ["Software development", "Artificial intelligence", "Jewellery billing software", "Full-stack web development", "Social media marketing"],
+    sameAs: founderLinks(),
+  };
   const org = {
     "@type": "Organization",
     "@id": url(base, "/#org"),
@@ -61,8 +93,8 @@ export function jsonLd(path, base = SITE_URL) {
     foundingDate: "2025-08",
     sameAs: SOCIALS.filter((s) => s.href !== "#").map((s) => s.href),
     address: { "@type": "PostalAddress", addressLocality: "Panvel", addressRegion: "Maharashtra", addressCountry: "IN" },
-    areaServed: ["Panvel", "Navi Mumbai", "Maharashtra"],
-    founder: { "@type": "Person", name: FOUNDER.name, jobTitle: FOUNDER.role, sameAs: [FOUNDER.linkedin, FOUNDER.portfolio] },
+    areaServed: [...PANVEL.areas.map((a) => ({ "@type": "Place", name: `${a}, Maharashtra` })), { "@type": "State", name: "Maharashtra" }],
+    founder: { "@id": person["@id"] },
   };
   const app = {
     "@type": "SoftwareApplication",
@@ -82,7 +114,7 @@ export function jsonLd(path, base = SITE_URL) {
       priceSpecification: { "@type": "UnitPriceSpecification", price: p.price, priceCurrency: "INR", unitText: "MONTH", valueAddedTaxIncluded: false },
     })),
   };
-  const graph = [org, { "@type": "WebSite", "@id": url(base, "/#site"), name: "CaratCloud", url: url(base, "/"), publisher: { "@id": org["@id"] } }, app];
+  const graph = [org, person, { "@type": "WebSite", "@id": url(base, "/#site"), name: "CaratCloud", url: url(base, "/"), publisher: { "@id": org["@id"] } }, app];
 
   if (path === "/") {
     graph.push({
@@ -106,6 +138,17 @@ export function jsonLd(path, base = SITE_URL) {
       ],
     });
   }
+  if (path === "/founder") {
+    graph.push({
+      "@type": "ProfilePage",
+      "@id": url(base, "/founder#page"),
+      url: url(base, "/founder"),
+      name: PAGES[path].title,
+      mainEntity: { "@id": person["@id"] },
+      about: { "@id": person["@id"] },
+      isPartOf: { "@id": url(base, "/#site") },
+    });
+  }
   if (path === "/custom-software") {
     graph.push({
       "@type": "Service",
@@ -116,7 +159,19 @@ export function jsonLd(path, base = SITE_URL) {
       description: CUSTOM.services.map((s) => s.title).join(", "),
     });
   }
-  const pageFaqs = { "/restaurant-software": DINE.faqs, "/custom-software": CUSTOM.faqs }[path];
+  if (path === "/jewellery-software-panvel") {
+    graph.push({
+      "@type": "Service",
+      "@id": url(base, "/jewellery-software-panvel#service"),
+      name: "Jewellery billing software in Panvel",
+      serviceType: "Jewellery billing software",
+      provider: { "@id": org["@id"] },
+      isRelatedTo: { "@id": app["@id"] },
+      areaServed: PANVEL.areas.map((a) => ({ "@type": "Place", name: `${a}, Maharashtra` })),
+      offers: PLANS.map((p) => ({ "@type": "Offer", name: `${p.name} plan`, price: p.price, priceCurrency: "INR" })),
+    });
+  }
+  const pageFaqs = { "/restaurant-software": DINE.faqs, "/custom-software": CUSTOM.faqs, "/jewellery-software-panvel": PANVEL.faqs }[path];
   if (pageFaqs) {
     graph.push({
       "@type": "FAQPage",
@@ -141,6 +196,25 @@ const faqHtml = (faqs) => `<h2>Questions</h2><dl>${faqs.map(([q, a]) => `<dt>${e
 const cardsHtml = (h, cards) => `<h2>${h}</h2><ul>${cards.map((c) => `<li><strong>${esc(c.title)}</strong>: ${esc(c.text)}</li>`).join("")}</ul>`;
 
 export function fallbackHtml(path) {
+  if (path === "/jewellery-software-panvel") {
+    return (
+      `<main><h1>Jewellery software in Panvel</h1><p>CaratCloud is jewellery billing software from Panvel for jewellers in ${PANVEL.areas.join(", ")}. GST + HUID bills in under a minute, stock, saving schemes, dues and girvi, in Marathi, Hindi or English. Free demo at your shop, local support, from ${inr(PLANS[0].price)} a month.</p>` +
+      cardsHtml("Why Panvel jewellers choose CaratCloud", PANVEL.reasons) +
+      `<h2>How it starts</h2><ol>${PANVEL.steps.map((s) => `<li><strong>${esc(s.title)}</strong>. ${esc(s.text)}</li>`).join("")}</ol>` +
+      `<h2>What local jewellers say</h2>${TESTIMONIALS.map((t) => `<blockquote><p>${esc(t.quote)}</p><footer>${esc(t.person)}, ${esc(t.role)}, ${esc(t.shop)}, ${esc(t.place)}</footer></blockquote>`).join("")}` +
+      plansHtml() + faqHtml(PANVEL.faqs) + contactHtml() +
+      `<p><a href="/jewellery">CaratCloud Jewellery features</a> · <a href="/">CaratCloud home</a></p></main>`
+    );
+  }
+  if (path === "/founder") {
+    return (
+      `<main><h1>${esc(FOUNDER.name)}, founder of CaratCloud</h1><p>${esc(FOUNDER.bio)}</p>` +
+      FOUNDER.about.map((a) => `<p>${esc(a)}</p>`).join("") +
+      `<h2>Vision</h2><p>${esc(FOUNDER.vision)}</p><h2>Mission</h2><ul>${FOUNDER.mission.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>` +
+      `<h2>Find Shravan online</h2><ul>${founderLinks().map((l) => `<li><a href="${l}">${esc(l)}</a></li>`).join("")}</ul>` +
+      contactHtml() + `<p><a href="/">CaratCloud home</a></p></main>`
+    );
+  }
   if (path === "/website-designs") {
     return (
       `<main><h1>All ${TEMPLATES.length} website designs for jewellers</h1><p>Your shop's own premium website, from ${inr(STOREFRONT.price)} a month. ${esc(STOREFRONT.points.join(". "))}.</p>` +
@@ -182,11 +256,11 @@ export function fallbackHtml(path) {
   return (
     `<main><h1>Your shop runs on software, not on notebooks</h1>` +
     `<p>CaratCloud is a software company in Panvel, Navi Mumbai, making simple software for small Indian businesses in their own language.</p>` +
-    `<h2>CaratCloud Jewellery: jewellery shop software</h2><p>${esc(PRODUCTS[0].text)} <a href="/jewellery">See CaratCloud Jewellery</a></p>` +
+    `<h2>CaratCloud Jewellery: jewellery shop software</h2><p>${esc(PRODUCTS[0].text)} <a href="/jewellery">See CaratCloud Jewellery</a> · <a href="/jewellery-software-panvel">Jewellery software in Panvel</a></p>` +
     `<h2>CaratCloud Dine: restaurant software</h2><p>${esc(PRODUCTS[1].text)} <a href="/restaurant-software">Restaurant software</a></p>` +
     `<h2>Custom software</h2><p>Need software made for your own business? We design, build and support apps and websites. <a href="/custom-software">Custom software development</a></p>` +
     plansHtml() + faqHtml(FAQS) +
-    `<h2>Founder</h2><p>${esc(FOUNDER.name)}, ${esc(FOUNDER.role)}. ${esc(FOUNDER.since)}.</p>` +
+    `<h2>Founder</h2><p><a href="/founder">${esc(FOUNDER.name)}</a>, ${esc(FOUNDER.role)}. ${esc(FOUNDER.since)}.</p>` +
     contactHtml() + `</main>`
   );
 }
@@ -230,7 +304,8 @@ export const llmsTxt = (base = SITE_URL) =>
   `Live product: CaratCloud Jewellery (billing, stock, saving schemes, dues and girvi for jewellery shops). ` +
   `Next: CaratCloud Dine, restaurant software launching ${DINE.launch}. Also builds custom software.\n\n` +
   `## Pages\n\n- [Home](${url(base, "/")}): products, prices, founder and FAQ\n- [CaratCloud Jewellery](${url(base, "/jewellery")}): jewellery billing software, step by step\n` +
-  `- [Restaurant software](${url(base, "/restaurant-software")}): CaratCloud Dine, launching ${DINE.launch}\n- [Custom software](${url(base, "/custom-software")}): apps and websites built for your business\n\n` +
+  `- [Restaurant software](${url(base, "/restaurant-software")}): CaratCloud Dine, launching ${DINE.launch}\n- [Custom software](${url(base, "/custom-software")}): apps and websites built for your business\n` +
+  `- [Jewellery software in Panvel](${url(base, "/jewellery-software-panvel")}): local demo, setup and support for jewellers in Panvel and Navi Mumbai\n- [Website designs](${url(base, "/website-designs")}): 15 website designs for jewellery shops\n- [Founder](${url(base, "/founder")}): ${FOUNDER.name}, founder of CaratCloud\n\n` +
   `## Prices (monthly, taxes extra)\n\n${PLANS.map((p) => `- ${p.name}: ${inr(p.price)} (${p.logins})`).join("\n")}\n` +
   `${SOCIAL.map((s) => `- ${s.name} social media package: ${inr(s.price)}`).join("\n")}\n\n` +
-  `## Contact\n\n- Phone / WhatsApp: ${PHONE_DISPLAY}\n- Email: ${EMAIL}\n- Founder: ${FOUNDER.name}\n`;
+  `## Contact\n\n- Phone / WhatsApp: ${PHONE_DISPLAY}\n- Email: ${EMAIL}\n- Founder: ${FOUNDER.name} (${FOUNDER.portfolio})\n`;

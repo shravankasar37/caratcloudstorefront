@@ -11,6 +11,8 @@ import RestaurantPage from "@/pages/RestaurantPage";
 import CustomSoftwarePage from "@/pages/CustomSoftwarePage";
 import PrivacyPage from "@/pages/PrivacyPage";
 import WebsiteDesignsPage from "@/pages/WebsiteDesignsPage";
+import FounderPage from "@/pages/FounderPage";
+import PanvelPage from "@/pages/PanvelPage";
 import { PageMeta } from "@/components/site/PageMeta";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path="/custom-software" element={<CustomSoftwarePage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/website-designs" element={<WebsiteDesignsPage />} />
+        <Route path="/founder" element={<FounderPage />} />
+        <Route path="/jewellery-software-panvel" element={<PanvelPage />} />
         <Route path="/jewellery-erp" element={<Navigate to="/jewellery" replace />} />
         <Route path="*" element={<HomePage />} />
       </Routes>

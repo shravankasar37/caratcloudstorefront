@@ -40,6 +40,7 @@ export const Footer = () => (
         </div>
         <Col title="Products">
           <li><Link to="/jewellery" data-testid="footer-link-jewellery" className="hover:text-navy">CaratCloud Jewellery</Link></li>
+          <li><Link to="/jewellery-software-panvel" data-testid="footer-link-panvel" className="hover:text-navy">Jewellery software in Panvel</Link></li>
           <li><Link to="/restaurant-software" data-testid="footer-link-dine" className="hover:text-navy">CaratCloud Dine <span className="ml-1 rounded-full bg-navy px-2 py-0.5 font-mono text-[9px] uppercase tracking-wider text-[#F4E3B0]">Jan 2027</span></Link></li>
         </Col>
         <Col title="Services">
@@ -49,7 +50,7 @@ export const Footer = () => (
           <li><Link to="/custom-software" data-testid="footer-link-custom" className="hover:text-navy">Custom software</Link></li>
         </Col>
         <Col title="Company">
-          <Btn hash="founder">Meet the founder</Btn>
+          <li><Link to="/founder" data-testid="footer-link-founder" className="hover:text-navy">Meet the founder</Link></li>
           <Btn hash="how-it-works">How it works</Btn>
           <Btn hash="faq">FAQ</Btn>
           <Btn hash="book">Book a free demo</Btn>
