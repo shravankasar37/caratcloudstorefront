@@ -1,7 +1,7 @@
 // SEO for every page: titles, descriptions, structured data and the plain-HTML copy
 // that crawlers read before JavaScript runs. Used by the app (per-route <head>) and by
 // the build (vite.config.js writes it into each page's index.html).
-import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM } from "../data/caratcloud.js";
+import { PLANS, SOCIAL, FAQS, PRODUCTS, JOURNEY, FEATURES, FOUNDER, DINE, CUSTOM, TEMPLATES, STOREFRONT } from "../data/caratcloud.js";
 import { PHONE, PHONE_DISPLAY, EMAIL, SOCIALS } from "./site.js";
 import { PRIVACY } from "../data/privacy.js";
 
@@ -31,6 +31,11 @@ export const PAGES = {
     description:
       "Custom software development for small businesses in Navi Mumbai and Panvel: business apps, websites and WhatsApp tools. We meet you, understand your needs, then send a quote.",
     name: "Custom software",
+  },
+  "/website-designs": {
+    title: "15 Jewellery Shop Website Designs | CaratCloud",
+    description: "See 15 ready website designs for jewellery shops, live. Your shop's own premium website with designs, live gold rate, Google Maps and WhatsApp, from ₹2,499 a month.",
+    name: "Website designs",
   },
   "/privacy": {
     title: "Privacy Policy | CaratCloud",
@@ -136,6 +141,13 @@ const faqHtml = (faqs) => `<h2>Questions</h2><dl>${faqs.map(([q, a]) => `<dt>${e
 const cardsHtml = (h, cards) => `<h2>${h}</h2><ul>${cards.map((c) => `<li><strong>${esc(c.title)}</strong>: ${esc(c.text)}</li>`).join("")}</ul>`;
 
 export function fallbackHtml(path) {
+  if (path === "/website-designs") {
+    return (
+      `<main><h1>All ${TEMPLATES.length} website designs for jewellers</h1><p>Your shop's own premium website, from ${inr(STOREFRONT.price)} a month. ${esc(STOREFRONT.points.join(". "))}.</p>` +
+      `<ul>${TEMPLATES.map((t) => `<li><a href="${t.url}">${t.n} ${esc(t.name)}</a>: ${esc(t.style)}</li>`).join("")}</ul>` +
+      contactHtml() + `<p><a href="/">CaratCloud home</a></p></main>`
+    );
+  }
   if (path === "/privacy") {
     return (
       `<main><h1>CaratCloud privacy policy</h1><p>Last updated: ${esc(PRIVACY.updated)}</p><p>${esc(PRIVACY.intro)}</p>` +

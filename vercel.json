@@ -91,7 +91,7 @@
   ],
   "rewrites": [
     {
-      "source": "/:page(jewellery|restaurant-software|custom-software|privacy)",
+      "source": "/:page(jewellery|restaurant-software|custom-software|privacy|website-designs)",
       "destination": "/:page/index.html"
     },
     {
